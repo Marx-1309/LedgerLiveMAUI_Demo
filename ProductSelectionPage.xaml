@@ -5,10 +5,10 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="#0e0e11">
 
-    <ContentPage.Resources
+    <ContentPage.Resources>
 
         <Style TargetType="Label">
-        <Setter Property="TextColor" Value="White" />
+            <Setter Property="TextColor" Value="White" />
         </Style>
 
         <Style TargetType="Button">
