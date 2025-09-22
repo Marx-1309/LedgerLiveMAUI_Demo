@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LedgerDemo.ProductDetailsPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#0e0e11"
+             Title="ProductDetailsPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Top Navigation Bar -->
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto,*,Auto"
+              BackgroundColor="#16161a"
+              Padding="20,10">
+            <ImageButton Grid.Column="0"
+                         Source="arrow_left.png"
+                         HeightRequest="30"
+                         WidthRequest="30"
+                         BackgroundColor="Transparent"
+                         Clicked="OnPreviousClicked" />
+
+            <Label Grid.Column="1"
+                   Text="Ledger Live"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+            <Label Grid.Column="2"
+                   Text="English ▾"
+                   FontSize="16"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End" />
+        </Grid>
+
+        <!-- Scrollable Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="40" Padding="20">
+
+                <!-- Row 1: FIRST TIME USING YOUR NANO S -->
+                <VerticalStackLayout Spacing="20">
+                    <Label Text="FIRST TIME USING YOUR NANO S?"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           LineBreakMode="WordWrap" />
+
+                    <VerticalStackLayout HorizontalOptions="End">
+                        <!-- Card -->
+                        <Frame BackgroundColor="Transparent"
+                               BorderColor="#333"
+                               CornerRadius="4"
+                               WidthRequest="300"
+                               HeightRequest="380"
+                               HasShadow="False"
+                               Padding="20">
+                            <VerticalStackLayout Spacing="15">
+                                <Image Source="iphone16_pro_mockup.jpg"
+                                       HeightRequest="140"
+                                       Aspect="AspectFit"
+                                       HorizontalOptions="Center" />
+
+                                <Label Text="SETUP A NEW NANO S"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       LineBreakMode="WordWrap" />
+
+                                <Label Text="Let's start and set up your device"
+                                       FontSize="14"
+                                       Opacity="0.7"
+                                       LineBreakMode="WordWrap" />
+
+                                <ImageButton Source="right_arrow.png"
+                                             WidthRequest="40"
+                                             HeightRequest="40"
+                                             HorizontalOptions="End"
+                                             VerticalOptions="End"
+                                             BackgroundColor="Transparent"
+                                             Clicked="OnStartSetupClicked"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+
+                <!-- Divider -->
+                <BoxView HeightRequest="1" Color="#444" />
+
+                <!-- Row 2: ALREADY HAVE A RECOVERY PHRASE -->
+                <VerticalStackLayout Spacing="20">
+                    <Label Text="ALREADY HAVE A RECOVERY PHRASE?"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           LineBreakMode="WordWrap" />
+
+                    <VerticalStackLayout Spacing="25"
+                                         HorizontalOptions="End">
+
+                        <!-- Card 1 -->
+                        <Frame BackgroundColor="Transparent"
+                               BorderColor="#333"
+                               CornerRadius="4"
+                               WidthRequest="300"
+                               HeightRequest="380"
+                               HasShadow="False"
+                               Padding="20">
+                            <VerticalStackLayout Spacing="15">
+                                <Image Source="iphone16_pro_mockup.jpg"
+                                       HeightRequest="140"
+                                       Aspect="AspectFit"
+                                       HorizontalOptions="Center" />
+
+                                <Label Text="CONNECT YOUR NANO S"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       LineBreakMode="WordWrap" />
+
+                                <Label Text="Is your device already set up? Connect it to the app!"
+                                       FontSize="14"
+                                       Opacity="0.7"
+                                       LineBreakMode="WordWrap" />
+
+                                <ImageButton Source="right_arrow.png"
+                                             WidthRequest="40"
+                                             HeightRequest="40"
+                                             HorizontalOptions="End"
+                                             VerticalOptions="End"
+                                             BackgroundColor="Transparent" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!-- Card 2 -->
+                        <Frame BackgroundColor="Transparent"
+                               BorderColor="#333"
+                               CornerRadius="4"
+                               WidthRequest="300"
+                               HeightRequest="380"
+                               HasShadow="False"
+                               Padding="20">
+                            <VerticalStackLayout Spacing="15">
+                                <Image Source="iphone16_pro_mockup.jpg"
+                                       HeightRequest="140"
+                                       Aspect="AspectFit"
+                                       HorizontalOptions="Center" />
+
+                                <Label Text="RESTORE YOUR RECOVERY PHRASE ON A NEW DEVICE"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       LineBreakMode="WordWrap" />
+
+                                <Label Text="Use an existing recovery phrase to restore your private keys on a new Nano!"
+                                       FontSize="14"
+                                       Opacity="0.7"
+                                       LineBreakMode="WordWrap" />
+
+                                <ImageButton Source="right_arrow.png"
+                                             WidthRequest="40"
+                                             HeightRequest="40"
+                                             HorizontalOptions="End"
+                                             VerticalOptions="End"
+                                             BackgroundColor="Transparent" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

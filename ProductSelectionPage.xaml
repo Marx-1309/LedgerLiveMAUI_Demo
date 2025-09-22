@@ -97,7 +97,7 @@
                     <Grid x:Name="GridStax" Style="{StaticResource ProductContainer}">
                         <Image x:Name="ImageStax" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
                         <Label Text="Ledger Stax" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
-                        <Button x:Name="ButtonStax" Style="{StaticResource SelectButton}" />
+                        <Button x:Name="ButtonStax" Style="{StaticResource SelectButton}" Clicked="OnProductSelected" />
                         <Grid.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Grid.GestureRecognizers>
@@ -107,7 +107,7 @@
                     <Grid x:Name="GridFlex" Style="{StaticResource ProductContainer}">
                         <Image x:Name="ImageFlex" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
                         <Label Text="Ledger Flex" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
-                        <Button x:Name="ButtonFlex" Style="{StaticResource SelectButton}" />
+                        <Button x:Name="ButtonFlex" Style="{StaticResource SelectButton}" Clicked="OnProductSelected" />
                         <Grid.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Grid.GestureRecognizers>
@@ -117,7 +117,7 @@
                     <Grid x:Name="GridNanoS" Style="{StaticResource ProductContainer}">
                         <Image x:Name="ImageNanoS" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
                         <Label Text="Ledger Nano S" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
-                        <Button x:Name="ButtonNanoS" Style="{StaticResource SelectButton}" />
+                        <Button x:Name="ButtonNanoS" Style="{StaticResource SelectButton}" Clicked="OnProductSelected" />
                         <Grid.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Grid.GestureRecognizers>
@@ -127,7 +127,7 @@
                     <Grid x:Name="GridNanoSPlus" Style="{StaticResource ProductContainer}">
                         <Image x:Name="ImageNanoSPlus" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
                         <Label Text="Ledger Nano S Plus" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
-                        <Button x:Name="ButtonNanoSPlus" Style="{StaticResource SelectButton}" />
+                        <Button x:Name="ButtonNanoSPlus" Style="{StaticResource SelectButton}" Clicked="OnProductSelected" />
                         <Grid.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Grid.GestureRecognizers>
@@ -137,7 +137,7 @@
                     <Grid x:Name="GridNanoX" Style="{StaticResource ProductContainer}">
                         <Image x:Name="ImageNanoX" Source="nanox_image.png" Style="{StaticResource ProductImage}" />
                         <Label Text="Ledger Nano X" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
-                        <Button x:Name="ButtonNanoX" Style="{StaticResource SelectButton}" />
+                        <Button x:Name="ButtonNanoX" Style="{StaticResource SelectButton}" Clicked="OnProductSelected" />
                         <Grid.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
                         </Grid.GestureRecognizers>
