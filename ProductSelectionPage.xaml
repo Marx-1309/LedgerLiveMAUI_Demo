@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LedgerDemo.ProductSelectionPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#0e0e11">
+
+    <ContentPage.Resources
+
+        <Style TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="CornerRadius" Value="25" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+        </Style>
+
+        <!-- Style for the product items -->
+        <Style x:Key="ProductContainer" TargetType="Grid">
+            <Setter Property="Margin" Value="10,20,10,0" />
+            <Setter Property="HeightRequest" Value="250" />
+        </Style>
+
+        <Style x:Key="ProductImage" TargetType="Image">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+
+        <Style x:Key="ProductLabel" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="SelectButton" TargetType="Button">
+            <Setter Property="Text" Value="Select" />
+            <Setter Property="BackgroundColor" Value="#fff" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="End" />
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *">
+        <!-- Top Nav Bar -->
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto, *, Auto"
+              BackgroundColor="#16161a"
+              Padding="20,10">
+            <ImageButton Grid.Column="0"
+                         Source="arrow_left.png"
+                         HeightRequest="30"
+                         WidthRequest="30"
+                         BackgroundColor="Transparent"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center" />
+
+            <Label Grid.Column="1"
+                   Text="Ledger Live"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+            <Grid Grid.Column="2" ColumnDefinitions="Auto, Auto">
+                <Image Grid.Column="0"
+                       Source="logo.png"
+                       HeightRequest="30"
+                       WidthRequest="30" />
+                <Label Grid.Column="1"
+                       Text="LEDGER"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" BackgroundColor="#0e0e11">
+            <VerticalStackLayout Spacing="20"
+                                 Margin="20"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="CenterAndExpand">
+
+                <Label Text="WHAT'S YOUR LEDGER?"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,20" />
+
+                <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
+                    <!-- Item 1-->
+                    <Grid x:Name="GridStax" Style="{StaticResource ProductContainer}">
+                        <Image x:Name="ImageStax" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
+                        <Label Text="Ledger Stax" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
+                        <Button x:Name="ButtonStax" Style="{StaticResource SelectButton}" />
+                        <Grid.GestureRecognizers>
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                    <!-- Item 2-->
+                    <Grid x:Name="GridFlex" Style="{StaticResource ProductContainer}">
+                        <Image x:Name="ImageFlex" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
+                        <Label Text="Ledger Flex" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
+                        <Button x:Name="ButtonFlex" Style="{StaticResource SelectButton}" />
+                        <Grid.GestureRecognizers>
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                    <!-- Item 3-->
+                    <Grid x:Name="GridNanoS" Style="{StaticResource ProductContainer}">
+                        <Image x:Name="ImageNanoS" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
+                        <Label Text="Ledger Nano S" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
+                        <Button x:Name="ButtonNanoS" Style="{StaticResource SelectButton}" />
+                        <Grid.GestureRecognizers>
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                    <!-- Item 4-->
+                    <Grid x:Name="GridNanoSPlus" Style="{StaticResource ProductContainer}">
+                        <Image x:Name="ImageNanoSPlus" Source="iphone16_pro.jpg" Style="{StaticResource ProductImage}" />
+                        <Label Text="Ledger Nano S Plus" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
+                        <Button x:Name="ButtonNanoSPlus" Style="{StaticResource SelectButton}" />
+                        <Grid.GestureRecognizers>
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                    <!-- Item 5-->
+                    <Grid x:Name="GridNanoX" Style="{StaticResource ProductContainer}">
+                        <Image x:Name="ImageNanoX" Source="nanox_image.png" Style="{StaticResource ProductImage}" />
+                        <Label Text="Ledger Nano X" Style="{StaticResource ProductLabel}" VerticalOptions="End" />
+                        <Button x:Name="ButtonNanoX" Style="{StaticResource SelectButton}" />
+                        <Grid.GestureRecognizers>
+                            <PointerGestureRecognizer PointerEntered="OnPointerEntered" PointerExited="OnPointerExited" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:local="clr-namespace:LedgerDemo"
+             x:Class="LedgerDemo.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#0e0e11">
+
+    <ContentPage.Resources>
+        <!-- Common styles for this page -->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="CornerRadius" Value="25" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <!-- Main Content Grid -->
+        <Grid.ColumnDefinitions>
+            <!-- Define the column for the sidebar (left) and the main content (right) -->
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Column - Dark Theme -->
+        <Grid Grid.Column="0" BackgroundColor="#0e0e11">
+            <VerticalStackLayout Spacing="20"
+                                 Margin="40,60,40,40"
+                                 VerticalOptions="Center">
+
+                <!-- Logo and Title -->
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Start">
+                    <!-- Placeholder for the square logo -->
+                    <BoxView WidthRequest="30" HeightRequest="30" Color="#444" CornerRadius="5" VerticalOptions="Center" />
+                    <Label Text="LEDGER LIVE" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <!-- Heading -->
+                <Label Text="THE MOST SECURE CRYPTOCURRENCY &amp; NFT WALLET"
+                       FontSize="48"
+                       FontAttributes="Bold"
+                       LineBreakMode="WordWrap"
+                       Margin="0,50,0,0" />
+
+                <!-- Sub-heading -->
+                <Label Text="Securely manage, buy and grow your crypto and NFTs on Ledger Live."
+                       FontSize="20"
+                       LineBreakMode="WordWrap"
+                       Opacity="0.7"
+                       Margin="0,-10,0,0" />
+
+                <!-- Action Buttons -->
+                <Button Text="Get started →"
+                        x:Name="GetStartedButton"
+                        BackgroundColor="#fff"
+                        TextColor="Black"
+                        Margin="0,40,0,0"
+                        HorizontalOptions="Fill"
+                        Clicked="OnGetStartedClicked" />
+
+                <Button Text="No device? Buy a Ledger"
+                        BackgroundColor="#222"
+                        TextColor="White"
+                        BorderColor="White"
+                        BorderWidth="1"
+                        HorizontalOptions="Fill"
+                        />
+
+                <Label Text="Sync with another Ledger Live app"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       VerticalOptions="EndAndExpand"
+                       Margin="0,40,0,0"
+                       Opacity="0.7"/>
+
+                <!-- Links at the bottom -->
+                <HorizontalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="End">
+                    <Label Text="By tapping " FontSize="14" Opacity="0.7"/>
+                    <Label Text="Get Started" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1"/>
+                    <Label Text="you consent and agree to our " FontSize="14" Opacity="0.7"/>
+                    <Label Text="Terms and conditions" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1"/>
+                    <Label Text="and" FontSize="14" Opacity="0.7"/>
+                    <Label Text="Privacy Policy" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Right Column - Light Background with Lottie Animation -->
+        <Grid Grid.Column="1" BackgroundColor="black">
+            <skia:SKLottieView Source="3d_hologram.json"
+                               RepeatCount="-1"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand" />
+        </Grid>
+
+        <!-- Sidebar Grid - Hidden by default -->
+        <Grid x:Name="SidebarGrid"
+              Grid.ColumnSpan="2"
+              BackgroundColor="#00000080"
+              IsVisible="False"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="400" />
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Column="0" BackgroundColor="#00000000" />
+
+            <!-- The actual sidebar content -->
+            <Grid Grid.Column="1" BackgroundColor="#16161a">
+                <VerticalStackLayout Spacing="20" Margin="40">
+                    <Label Text="Help us improve and personalize your experience"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           LineBreakMode="WordWrap" />
+
+                    <Label Text="Sharing your Ledger Live data helps us understand your preferences and show content that's relevant to you."
+                           FontSize="16"
+                           TextColor="White"
+                           Opacity="0.7"
+                           LineBreakMode="WordWrap" />
+
+                    <Label Text="With your consent, Ledger will be able to collect data about how you use Ledger Live (including page visits and clicks):"
+                           FontSize="16"
+                           TextColor="White"
+                           Opacity="0.7"
+                           LineBreakMode="WordWrap" />
+
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="✔" TextColor="White" VerticalOptions="Center" />
+                            <Label Text="To measure the performance of Ledger Live and enhance both the app and your experience (Analytics)."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   Opacity="0.7"
+                                   LineBreakMode="WordWrap" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="✔" TextColor="White" VerticalOptions="Center" />
+                            <Label Text="To provide you with personalized recommendations and content tailored to your preferences, as well as to help us measure the effectiveness of our marketing campaigns (Personalization)."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   Opacity="0.7"
+                                   LineBreakMode="WordWrap" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <Label Text="Ledger will never collect information regarding:"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="White" />
+
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="✘" TextColor="Red" VerticalOptions="Center" />
+                            <Label Text="Your assets."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   Opacity="0.7" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="✘" TextColor="Red" VerticalOptions="Center" />
+                            <Label Text="Your portfolio."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   Opacity="0.7" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="✘" TextColor="Red" VerticalOptions="Center" />
+                            <Label Text="Your personal identifying information."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   Opacity="0.7" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <Label Text="You can revoke your consent any time in the app settings. Learn more about how we handle your data"
+                           FontSize="14"
+                           TextColor="White"
+                           Opacity="0.7"
+                           LineBreakMode="WordWrap" />
+
+                    <Grid VerticalOptions="EndAndExpand" Margin="0,40,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button Text="Refuse all"
+                                BackgroundColor="#222"
+                                TextColor="White"
+                                BorderColor="White"
+                                BorderWidth="1"
+                                Grid.Column="0"
+                                HorizontalOptions="Fill"
+                                Clicked="OnRefuseAllClicked" />
+
+                        <Button Text="Accept all"
+                                BackgroundColor="#fff"
+                                TextColor="Black"
+                                Grid.Column="1"
+                                HorizontalOptions="Fill"
+                                Margin="10,0,0,0"
+                                Clicked="OnAcceptAllClicked" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
