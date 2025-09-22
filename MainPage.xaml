@@ -71,30 +71,27 @@
                         TextColor="White"
                         BorderColor="White"
                         BorderWidth="1"
-                        HorizontalOptions="Fill"
-                        />
+                        HorizontalOptions="Fill" />
 
                 <Label Text="Sync with another Ledger Live app"
                        FontSize="16"
                        HorizontalOptions="Center"
                        VerticalOptions="EndAndExpand"
                        Margin="0,40,0,0"
-                       Opacity="0.7"/>
+                       Opacity="0.7" />
 
-                <!-- Links at the bottom -->
+                <!-- Bottom Links -->
                 <HorizontalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="End">
-                    <Label Text="By tapping " FontSize="14" Opacity="0.7"/>
-                    <Label Text="Get Started" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1"/>
-                    <Label Text="you consent and agree to our " FontSize="14" Opacity="0.7"/>
-                    <Label Text="Terms and conditions" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1"/>
-                    <Label Text="and" FontSize="14" Opacity="0.7"/>
-                    <Label Text="Privacy Policy" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1"/>
+                    <Label Text="By tapping " FontSize="14" Opacity="0.7" />
+                    <Label Text="Get Started" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1" />
+                    <Label Text="you consent and agree to our " FontSize="14" Opacity="0.7" />
+                    <Label Text="Terms and conditions" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1" />
+                    <Label Text="and" FontSize="14" Opacity="0.7" />
+                    <Label Text="Privacy Policy" TextColor="#fff" FontSize="14" TextDecorations="Underline" Opacity="1" />
                 </HorizontalStackLayout>
-
             </VerticalStackLayout>
         </Grid>
 
-        <!-- Right Column - Light Background with Lottie Animation -->
         <Grid Grid.Column="1" BackgroundColor="black">
             <skia:SKLottieView Source="3d_hologram.json"
                                RepeatCount="-1"
@@ -102,7 +99,7 @@
                                VerticalOptions="FillAndExpand" />
         </Grid>
 
-        <!-- Sidebar Grid - Hidden by default -->
+        <!-- Sidebar -->
         <Grid x:Name="SidebarGrid"
               Grid.ColumnSpan="2"
               BackgroundColor="#00000080"
@@ -117,7 +114,7 @@
 
             <BoxView Grid.Column="0" BackgroundColor="#00000000" />
 
-            <!-- The actual sidebar content -->
+            <!-- sidebar content -->
             <Grid Grid.Column="1" BackgroundColor="#16161a">
                 <VerticalStackLayout Spacing="20" Margin="40">
                     <Label Text="Help us improve and personalize your experience"
